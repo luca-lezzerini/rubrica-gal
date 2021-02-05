@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "rubrica-gal-client"
+  "defaultProject": "rubrica-gal-client",
+  "cli": {
+    "analytics": false
+  }
 }
