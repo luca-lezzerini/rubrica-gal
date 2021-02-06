@@ -5,14 +5,14 @@
  */
 package it.sirfin.rubricagal.dto;
 
-public class RubricaGal {
+public class RubricaGalDto {
 
     private int ID;
     private String nome;
     private String cognome;
     private String telefono;
 
-    public RubricaGal() {
+    public RubricaGalDto() {
     }
 
     public int getID() {
