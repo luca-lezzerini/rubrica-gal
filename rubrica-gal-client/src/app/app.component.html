@@ -1,1 +1,16 @@
-<a></a>
+Rubrica Telefonica 
+<br>
+<br>
+Nome <input type="text" [(ngModel)]="nomeC">
+Cognome <input type="text" [(ngModel)]="cognomeC">
+Numero di telefono <input type="text" [(ngModel)]="telefonoC">
+<button (click)= "inserisci()">Inserisci Contatto</button>
+
+<ul *ngIf= "rubrica.length > 0">
+    <li *ngFor="let r of rubrica; index as i">
+      {{r.nomeC}}
+      {{r.cognomeC}}
+      {{r.telefonoC}}
+      <button (click)= "rimuovi()">Rimuovi Contatto</button>
+    </li>
+  </ul>
