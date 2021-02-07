@@ -5,22 +5,22 @@
  */
 package it.sirfin.rubricagal.controller;
 
-import it.sirfin.rubricagal.dto.RubricaGal;
+import it.sirfin.rubricagal.dto.RubricaGalDto;
 import java.util.ArrayList;
-import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin("*")
 @RestController
 public class RubricagalController {
 
-    private static int num;
-     List<RubricaGal> rubrica = new ArrayList<>();
-       
-       
-        
-
+    @RequestMapping("/rubrica")
+    public static void creaClasse() {
+       ArrayList<RubricaGalDto> rubrica = new ArrayList<>();
+        rubrica.add(new RubricaGalDto())
+    
+    }
+    
+    
 }

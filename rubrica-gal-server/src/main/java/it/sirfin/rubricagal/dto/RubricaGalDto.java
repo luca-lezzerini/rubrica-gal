@@ -7,12 +7,23 @@ package it.sirfin.rubricagal.dto;
 
 public class RubricaGalDto {
 
+    static int counter = 0;
     private int ID;
     private String nome;
     private String cognome;
     private String telefono;
 
-    public RubricaGalDto() {
+    public RubricaGalDto(String nome, String cognome, String telefono) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.telefono = telefono;
+
+        this.ID = updateID();
+    }
+
+    public int updateID() {
+        counter++;
+        return counter;
     }
 
     public int getID() {
@@ -46,4 +57,5 @@ public class RubricaGalDto {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
 }
