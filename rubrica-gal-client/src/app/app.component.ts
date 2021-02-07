@@ -9,6 +9,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   rubrica: Contatto[] = [];
   nomeC: String;
   cognomeC: String;
@@ -32,7 +35,7 @@ export class AppComponent {
   }
 
   rimuovi() {
-
+// Non funziona per adesso
   }
 
 }
