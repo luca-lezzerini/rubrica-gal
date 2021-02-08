@@ -29,3 +29,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span').textContent).toContain('rubrica-gal-client app is running!');
   });
 });
+//Ciao

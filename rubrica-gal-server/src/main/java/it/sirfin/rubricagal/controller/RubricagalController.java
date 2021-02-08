@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 public class RubricagalController {
-
+    //Inietto
    @Autowired
    RubricaService rubricagalService;
 

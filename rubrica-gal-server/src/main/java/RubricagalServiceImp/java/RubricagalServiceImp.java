@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package RubricagalServiceImp.java;
-
+//import
 import RubricagalService.java.RubricaService;
 import it.sirfin.rubricagal.dto.Contatto;
 import java.util.ArrayList;
