@@ -5,14 +5,10 @@ Rubrica Telefonica
 Nome <input type="text" [(ngModel)]="contatto.nome">
 Cognome <input type="text" [(ngModel)]="contatto.cognome">
 Numero di telefono <input type="text" [(ngModel)]="contatto.telefono">
+<br id="bottoni"><br>
 <button (click)= "inserisci()">Inserisci Contatto</button>
+<button (click)= "cancella()">Cancella lista</button>
+<button (click)= "recupera()">Recupera contatti</button>
+<button (click)= "rimuovi()">Rimuovi contatto</button>
 
-<ul *ngIf= "rubrica.length > 0">
-    <li *ngFor="let r of rubrica; index as i">
-      {{r.nome}}
-      {{r.cognome}}
-      {{r.telefono}}
-      <button (click)= "rimuovi()">Rimuovi Contatto</button>
-    </li>
-  </ul>
   <!-- FINE PROVA FEDERICO date 07/02/2021 -->

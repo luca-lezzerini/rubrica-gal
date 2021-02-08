@@ -15,7 +15,6 @@ export class AppComponent {
   
   // MODIFICA FATTA DA FEDERICO 08/02/21
   contatto: Contatto = new Contatto();
-  rubrica: Contatto[] = [];
   
   constructor(private http: HttpClient) { }
 
@@ -27,16 +26,20 @@ export class AppComponent {
     dto.nome = this.contatto.nome;
     dto.cognome = this.contatto.cognome;
     dto.telefono = this.contatto.telefono;
-    this.rubrica.push(this.contatto);
-    let ox: Observable<Contatto[]> = this.http
-      .post<Contatto[]>("http://localhost:8080/inserisciContatto",
+    let ox: Observable<Contatto> = this.http
+      .post<Contatto>("http://localhost:8080/inserisciContatto",
         dto);
-        ox.subscribe(r => this.rubrica = r)
+        ox.subscribe(r => this.contatto = r)
 
   }
 
   rimuovi() {
 // Non funziona per adesso
   }
+
+recupera(){}
+
+cancella(){}
+
 
 }

@@ -5,7 +5,7 @@
  */
 package it.sirfin.rubricagal.dto;
 
-public class RubricaGalDto {
+public class Contatto {
 
     static int counter = 0;
     private int ID;
@@ -13,7 +13,7 @@ public class RubricaGalDto {
     private String cognome;
     private String telefono;
 
-    public RubricaGalDto(String nome, String cognome, String telefono) {
+    public Contatto(String nome, String cognome, String telefono) {
         this.nome = nome;
         this.cognome = cognome;
         this.telefono = telefono;

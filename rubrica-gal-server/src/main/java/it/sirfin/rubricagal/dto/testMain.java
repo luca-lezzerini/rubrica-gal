@@ -12,11 +12,12 @@ package it.sirfin.rubricagal.dto;
 public class testMain {
 
     public static void main(String[] args) {
-        RubricaGalDto a,b,c,d;
-        a = new RubricaGalDto("Pippo", "Solo", "321513");
-        b = new RubricaGalDto("poailo", "cds", "5264154");
-        c = new RubricaGalDto("poailo", "cds", "5264154");
-        d = new RubricaGalDto("Pina", "Ciao", "5264154");
+        Contatto a;
+        Contatto b,c,d;
+        a = new Contatto("Pippo", "Solo", "321513");
+        b = new Contatto("poailo", "cds", "5264154");
+        c = new Contatto("poailo", "cds", "5264154");
+        d = new Contatto("Pina", "Ciao", "5264154");
         
         System.out.println("----Stampa-*-----");
         System.out.println(a.getID());
