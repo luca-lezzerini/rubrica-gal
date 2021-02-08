@@ -5,9 +5,11 @@
  */
 package it.sirfin.rubricagal.controller;
 
+import RubricagalService.java.RubricaService;
 import it.sirfin.rubricagal.dto.Contatto;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,29 +19,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RubricagalController {
 
-    int counter = 0;
-    List<Contatto> rubrica = new ArrayList<>();
+   @Autowired
+   RubricaService rubricagalService;
 
     //Metodo che consente di inserire un contatto nella rubrica
     @RequestMapping("/inserisciContatto")
-    public List<Contatto> inserisciContatto(@RequestBody Contatto c) {
-        c.setID(counter);
-        this.rubrica.add(c);
-        counter++;
-        return this.rubrica;
+    public void inserisciContatto(@RequestBody Contatto c) {
+        rubricagalService.inserisciContatto(c);
     }
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
     e inizializzando il contatore deli contatti a 0*/
     @RequestMapping("/svuoataRubrica")
-    public List<Contatto> svuotaContatto(@RequestBody Contatto contatto) {
-        this.rubrica = new ArrayList();
-        this.counter = 0;
-        return this.rubrica;
+    public void svuotaContatto(@RequestBody Contatto contatto) {
+        rubricagalService.svuotaContatto(contatto);
     }
     
     @RequestMapping("/recuperaContatti")
-    public List<Contatto> recuperaContatti() {
-    return this.rubrica;
+    public void recuperaContatti() {
+        rubricagalService.recuperaContatti();
     }
     
     

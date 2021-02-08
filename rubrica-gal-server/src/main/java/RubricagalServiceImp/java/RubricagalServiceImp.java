@@ -20,6 +20,7 @@ public class RubricagalServiceImp implements RubricaService{
     int counter = 0;
     
     //Metodo che consente di inserire un contatto nella rubrica
+    @Override
     public List<Contatto> inserisciContatto (Contatto c) {
         c.setID(counter);
         this.rubrica.add(c);
@@ -30,12 +31,14 @@ public class RubricagalServiceImp implements RubricaService{
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
     e inizializzando il contatore deli contatti a 0*/
     
+    @Override
     public List<Contatto> svuotaContatto(Contatto contatto) {
         this.rubrica = new ArrayList();
         this.counter = 0;
         return this.rubrica;
     }
     
+    @Override
     public List<Contatto> recuperaContatti() {
     return this.rubrica;
     }
