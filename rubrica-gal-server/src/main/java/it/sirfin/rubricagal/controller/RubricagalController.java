@@ -30,8 +30,8 @@ public class RubricagalController {
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
     e inizializzando il contatore deli contatti a 0*/
     @RequestMapping("/svuoataRubrica")
-    public void svuotaContatto(@RequestBody Contatto contatto) {
-        rubricagalService.svuotaContatto(contatto);
+    public void svuotaContatto() {
+        rubricagalService.svuotaContatto();
     }
     
     @RequestMapping("/recuperaContatti")

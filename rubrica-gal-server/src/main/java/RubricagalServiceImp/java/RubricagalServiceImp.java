@@ -32,7 +32,7 @@ public class RubricagalServiceImp implements RubricaService{
     e inizializzando il contatore deli contatti a 0*/
     
     @Override
-    public List<Contatto> svuotaContatto(Contatto contatto) {
+    public List<Contatto> svuotaContatto() {
         this.rubrica = new ArrayList();
         this.counter = 0;
         return this.rubrica;
