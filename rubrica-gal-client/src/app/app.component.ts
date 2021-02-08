@@ -12,11 +12,11 @@ export class AppComponent {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
+  
+  // MODIFICA FATTA DA FEDERICO 08/02/21
+  contatto: Contatto = new Contatto();
   rubrica: Contatto[] = [];
-  nomeC: String;
-  cognomeC: String;
-  telefonoC: String;
-
+  
   constructor(private http: HttpClient) { }
 
 
@@ -24,11 +24,12 @@ export class AppComponent {
 
   inserisci() {
     let dto = new Contatto();
-    dto.nome = this.nomeC;
-    dto.cognome = this.cognomeC;
-    dto.telefono = this.telefonoC;
+    dto.nome = this.contatto.nome;
+    dto.cognome = this.contatto.cognome;
+    dto.telefono = this.contatto.telefono;
+    this.rubrica.push(this.contatto);
     let ox: Observable<Contatto[]> = this.http
-      .post<Contatto[]>("http://localhost:8080/rubrica",
+      .post<Contatto[]>("http://localhost:8080/inserisciContatto",
         dto);
         ox.subscribe(r => this.rubrica = r)
 
