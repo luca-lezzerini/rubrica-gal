@@ -14,6 +14,7 @@ import java.util.List;
  */
 public interface RubricaService {
     //Metodi
+    //
      public List<Contatto> inserisciContatto (Contatto c);
      public List<Contatto> svuotaContatto(Contatto c);
      public List<Contatto> recuperaContatti();
