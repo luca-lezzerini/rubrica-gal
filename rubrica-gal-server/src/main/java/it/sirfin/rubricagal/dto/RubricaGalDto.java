@@ -17,13 +17,6 @@ public class RubricaGalDto {
         this.nome = nome;
         this.cognome = cognome;
         this.telefono = telefono;
-
-        this.ID = updateID();
-    }
-
-    public int updateID() {
-        counter++;
-        return counter;
     }
 
     public int getID() {
