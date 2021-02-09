@@ -47,6 +47,7 @@ recupera(){
 }
 
 cancella(){
+  
   this.stato = "ins";
 }
 
