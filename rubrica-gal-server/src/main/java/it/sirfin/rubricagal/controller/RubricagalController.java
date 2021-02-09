@@ -7,8 +7,6 @@ package it.sirfin.rubricagal.controller;
 
 import RubricagalService.java.RubricaService;
 import it.sirfin.rubricagal.dto.Contatto;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
