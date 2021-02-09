@@ -38,26 +38,16 @@ export class AppComponent {
   }
 
   rimuovi() {
-    this.stato = "con";
+    this.stato = "ins";
   }
 
   recupera() {
-    this.stato = "con";
+    this.stato = "ins";
   }
 
   cancella() {
 
-    this.stato = "con";
-  }
-
-  conferma() {
-
     this.stato = "ins";
-  }
-
-  annulla() {
-
-    this.stato = "mod";
   }
 
   indietro() {
