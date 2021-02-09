@@ -18,6 +18,9 @@ export class AppComponent {
   
   constructor(private http: HttpClient) { }
 
+  //modifica leo 08/02/2020
+  stato = "ins";
+
 
 
 
@@ -30,16 +33,22 @@ export class AppComponent {
       .post<Contatto>("http://localhost:8080/inserisciContatto",
         dto);
         ox.subscribe(r => this.contatto = r)
+        this.stato="mod";
 
   }
 
   rimuovi() {
 // Non funziona per adesso
+this.stato = "ins";
   }
 
-recupera(){}
+recupera(){
+  this.stato = "ins";
+}
 
-cancella(){}
+cancella(){
+  this.stato = "ins";
+}
 
 
 }

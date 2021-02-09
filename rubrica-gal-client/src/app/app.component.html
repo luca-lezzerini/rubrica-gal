@@ -6,9 +6,12 @@ Nome <input type="text" [(ngModel)]="contatto.nome">
 Cognome <input type="text" [(ngModel)]="contatto.cognome">
 Numero di telefono <input type="text" [(ngModel)]="contatto.telefono">
 <br id="bottoni"><br>
-<button (click)= "inserisci()">Inserisci Contatto</button>
-<button (click)= "cancella()">Cancella lista</button>
-<button (click)= "recupera()">Recupera contatti</button>
-<button (click)= "rimuovi()">Rimuovi contatto</button>
+<button *ngIf="stato == 'ins'"(click)= "inserisci()">Inserisci Contatto</button>
+
+
+
+<button *ngIf="stato == 'mod' " (click)= "cancella()">Cancella lista</button>
+<button *ngIf="stato == 'mod' "(click)= "recupera()">Recupera contatti</button>
+<button *ngIf="stato == 'mod' "(click)= "rimuovi()">Rimuovi contatto</button>
 
   <!-- FINE PROVA FEDERICO date 07/02/2021 -->
