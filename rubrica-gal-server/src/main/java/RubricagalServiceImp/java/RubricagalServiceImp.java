@@ -6,7 +6,7 @@
 package RubricagalServiceImp.java;
 
 import RubricagalService.java.RubricaService;
-import it.sirfin.rubricagal.dto.Contatto;
+import it.sirfin.rubricagal.dto.ContattoReq;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +16,12 @@ import java.util.List;
  */
 public class RubricagalServiceImp implements RubricaService{
 
-    List <Contatto> rubrica = new ArrayList ();
+    List <ContattoReq> rubrica = new ArrayList ();
     int counter = 0;
     
     //Metodo che consente di inserire un contatto nella rubrica
     @Override
-    public List<Contatto> inserisciContatto (Contatto c) {
+    public List<ContattoReq> inserisciContatto (ContattoReq c) {
         c.setID(counter);
         this.rubrica.add(c);
         counter++;
@@ -32,14 +32,14 @@ public class RubricagalServiceImp implements RubricaService{
     e inizializzando il contatore deli contatti a 0*/
     
     @Override
-    public List<Contatto> svuotaContatto(Contatto contatto) {
+    public List<ContattoReq> svuotaContatto(ContattoReq contatto) {
         this.rubrica = new ArrayList();
         this.counter = 0;
         return this.rubrica;
     }
     
     @Override
-    public List<Contatto> recuperaContatti() {
+    public List<ContattoReq> recuperaContatti() {
     return this.rubrica;
     }
     

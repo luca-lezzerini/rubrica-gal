@@ -6,11 +6,13 @@
 package it.sirfin.rubricagal.controller;
 
 import RubricagalService.java.RubricaService;
-import it.sirfin.rubricagal.dto.Contatto;
+import it.sirfin.rubricagal.dto.ContattoReq;
+import it.sirfin.rubricagal.dto.Risposta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin("*")
@@ -22,20 +24,31 @@ public class RubricagalController {
 
     //Metodo che consente di inserire un contatto nella rubrica
     @RequestMapping("/inserisciContatto")
-    public void inserisciContatto(@RequestBody Contatto c) {
+    @ResponseBody
+    public Risposta inserisciContatto(@RequestBody ContattoReq c) {
         rubricagalService.inserisciContatto(c);
+        Risposta risp = new Risposta();
+        return risp;
     }
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
     e inizializzando il contatore deli contatti a 0*/
     @RequestMapping("/svuoataRubrica")
-    public void svuotaContatto(@RequestBody Contatto contatto) {
+    @ResponseBody
+    public Risposta svuotaContatto(@RequestBody ContattoReq contatto) {
         rubricagalService.svuotaContatto(contatto);
+        Risposta risp = new Risposta("Contatto aggiunto");
+        return risp;
     }
     
     @RequestMapping("/recuperaContatti")
-    public void recuperaContatti() {
+    @ResponseBody
+    public Risposta recuperaContatti() {
         rubricagalService.recuperaContatti();
+        Risposta risp = new Risposta();
+        return risp;
     }
+
+   
     
     
 }

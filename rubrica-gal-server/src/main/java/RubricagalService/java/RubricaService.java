@@ -5,7 +5,7 @@
  */
 package RubricagalService.java;
 
-import it.sirfin.rubricagal.dto.Contatto;
+import it.sirfin.rubricagal.dto.ContattoReq;
 import java.util.List;
 
 /**
@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface RubricaService {
     
-     public List<Contatto> inserisciContatto (Contatto c);
-     public List<Contatto> svuotaContatto(Contatto c);
-     public List<Contatto> recuperaContatti();
+     public List<ContattoReq> inserisciContatto (ContattoReq c);
+     public List<ContattoReq> svuotaContatto(ContattoReq c);
+     public List<ContattoReq> recuperaContatti();
 }

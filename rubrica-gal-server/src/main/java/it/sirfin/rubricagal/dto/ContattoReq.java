@@ -5,7 +5,7 @@
  */
 package it.sirfin.rubricagal.dto;
 
-public class Contatto {
+public class ContattoReq {
 
     static int counter = 0;
     private int ID;
@@ -13,7 +13,7 @@ public class Contatto {
     private String cognome;
     private String telefono;
 
-    public Contatto(String nome, String cognome, String telefono) {
+    public ContattoReq(String nome, String cognome, String telefono) {
         this.nome = nome;
         this.cognome = cognome;
         this.telefono = telefono;

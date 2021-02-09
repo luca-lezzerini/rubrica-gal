@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Contatto } from './contatto';
 import { Observable } from 'rxjs';
+import { Risposta } from './Risposta';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class AppComponent {
   }
 
   contatto: Contatto = new Contatto();
+  risposta: Risposta;
 
   constructor(private http: HttpClient) { }
 
@@ -24,10 +26,13 @@ export class AppComponent {
     dto.nome = this.contatto.nome;
     dto.cognome = this.contatto.cognome;
     dto.telefono = this.contatto.telefono;
-    let ox: Observable<Contatto> = this.http
-      .post<Contatto>("http://localhost:8080/inserisciContatto",
+    let ox: Observable<Risposta> = this.http
+      .post<Risposta>("http://localhost:8080/inserisciContatto",
         dto);
-    ox.subscribe(r => this.contatto = r)
+    ox.subscribe(r => this.risposta.risp= r.risp)
+
+    // funciton (r) {r=this.contatto=r}
+
     this.stato = "mod";
 
   }
