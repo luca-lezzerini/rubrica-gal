@@ -13,16 +13,11 @@ export class AppComponent {
     throw new Error('Method not implemented.');
   }
 
-  // MODIFICA FATTA DA FEDERICO 08/02/21
   contatto: Contatto = new Contatto();
 
   constructor(private http: HttpClient) { }
 
-  //modifica leo 08/02/2020
   stato = "ins";
-
-
-
 
   inserisci() {
     let dto = new Contatto();
@@ -38,7 +33,6 @@ export class AppComponent {
   }
 
   rimuovi() {
-    // Non funziona per adesso
     this.stato = "con";
   }
 
@@ -65,7 +59,4 @@ export class AppComponent {
 
     this.stato = "ins";
   }
-
-
-
 }
