@@ -14,40 +14,39 @@ import java.util.List;
  *
  * @author Federico
  */
-public class RubricagalServiceImp implements RubricaService{
+public class RubricagalServiceImp implements RubricaService {
 
-    List <ContattoReq> rubrica = new ArrayList ();
+    List<ContattoReq> rubrica = new ArrayList<>();
     int counter = 0;
-    
+
     //Metodo che consente di inserire un contatto nella rubrica
     @Override
-    public List<ContattoReq> inserisciContatto (ContattoReq c) {
+    public List<ContattoReq> inserisciContatto(ContattoReq c) {
         c.setID(counter);
         this.rubrica.add(c);
         counter++;
         return this.rubrica;
     }
-    
+
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
     e inizializzando il contatore deli contatti a 0*/
-    
     @Override
     public List<ContattoReq> svuotaContatto(ContattoReq contatto) {
         this.rubrica = new ArrayList();
         this.counter = 0;
         return this.rubrica;
     }
-    
+
     @Override
     public List<ContattoReq> recuperaContatti() {
-    return this.rubrica;
+        return this.rubrica;
     }
-    
+
     @Override
-    public List <ContattoReq> eliminaContatto(ContattoReq c){
-        this.rubrica.removeIf(rm->rm.getID() == c.getID());
+    public List<ContattoReq> eliminaContatto(ContattoReq c) {
+        this.rubrica.removeIf(rm -> rm.getID() == c.getID());
         System.out.println("Eliminato con successo ");
         return this.rubrica;
     }
-    
+
 }
