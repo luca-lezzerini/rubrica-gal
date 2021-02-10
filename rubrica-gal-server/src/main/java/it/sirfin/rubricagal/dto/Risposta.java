@@ -26,6 +26,4 @@ public class Risposta {
 
     public Risposta() {
     }
-    
-  
 }

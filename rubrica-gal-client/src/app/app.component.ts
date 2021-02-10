@@ -31,7 +31,7 @@ export class AppComponent {
         dto);
     ox.subscribe(r => this.risposta.risp= r.risp)
 
-    // funciton (r) {r=this.contatto=r}
+    // funciton (r) {this.contatto = r.risp }
 
     this.stato = "mod";
 

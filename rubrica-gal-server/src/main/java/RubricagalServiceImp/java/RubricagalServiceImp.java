@@ -43,5 +43,11 @@ public class RubricagalServiceImp implements RubricaService{
     return this.rubrica;
     }
     
+    @Override
+    public List <ContattoReq> eliminaContatto(ContattoReq c){
+        this.rubrica.removeIf(rm->rm.getID() == c.getID());
+        System.out.println("Eliminato con successo ");
+        return this.rubrica;
+    }
     
 }

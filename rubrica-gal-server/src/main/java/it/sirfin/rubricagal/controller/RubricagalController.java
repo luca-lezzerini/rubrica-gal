@@ -47,6 +47,15 @@ public class RubricagalController {
         Risposta risp = new Risposta();
         return risp;
     }
+    @RequestMapping("/recuperaContatti")
+    @ResponseBody
+    public Risposta eliminaContatto(@RequestBody ContattoReq c) {
+        rubricagalService.eliminaContatto(c);
+        Risposta risp = new Risposta();
+        return risp;
+    }
+    
+    
 
    
     

@@ -17,4 +17,5 @@ public interface RubricaService {
      public List<ContattoReq> inserisciContatto (ContattoReq c);
      public List<ContattoReq> svuotaContatto(ContattoReq c);
      public List<ContattoReq> recuperaContatti();
+     //public List <ContattoReq> eliminaContatto (ContattoReq c);
 }
