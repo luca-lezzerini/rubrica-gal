@@ -30,14 +30,19 @@ export class AppComponent {
       .post<Risposta>("http://localhost:8080/inserisciContatto",
         dto);
     ox.subscribe(r => this.risposta.risp= r.risp)
-
-    // funciton (r) {this.contatto = r.risp }
-
+    // function (r) {this.contatto = r.risp }
     this.stato = "mod";
-
   }
 
   rimuovi() {
+    let dto = new Contatto();
+    dto.nome = this.contatto.nome;
+    dto.cognome = this.contatto.cognome;
+    dto.telefono = this.contatto.telefono;
+    let ox: Observable<Risposta> = this.http
+      .post<Risposta>("http://localhost:8080/eliminaContatti",
+        dto);
+    ox.subscribe(r => this.risposta.risp= r.risp)
     this.stato = "ins";
   }
 
@@ -45,13 +50,19 @@ export class AppComponent {
     this.stato = "ins";
   }
 
-  cancella() {
-
+  svuota() {
+    let dto = new Contatto();
+    dto.nome = this.contatto.nome;
+    dto.cognome = this.contatto.cognome;
+    dto.telefono = this.contatto.telefono;
+    let ox: Observable<Risposta> = this.http
+      .post<Risposta>("http://localhost:8080/svuotaRubrica",
+        dto);
+    ox.subscribe(r => this.risposta.risp= r.risp)
     this.stato = "ins";
   }
 
   indietro() {
-
     this.stato = "ins";
   }
 }

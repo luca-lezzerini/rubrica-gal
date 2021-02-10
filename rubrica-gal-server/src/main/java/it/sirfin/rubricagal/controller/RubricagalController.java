@@ -32,10 +32,10 @@ public class RubricagalController {
     }
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
     e inizializzando il contatore deli contatti a 0*/
-    @RequestMapping("/svuoataRubrica")
+    @RequestMapping("/svuotaRubrica")
     @ResponseBody
-    public Risposta svuotaContatto(@RequestBody ContattoReq contatto) {
-        rubricagalService.svuotaContatto(contatto);
+    public Risposta svuotaContatto(@RequestBody ContattoReq c) {
+        rubricagalService.svuotaContatto(c);
         Risposta risp = new Risposta("Contatto aggiunto");
         return risp;
     }
@@ -47,17 +47,12 @@ public class RubricagalController {
         Risposta risp = new Risposta();
         return risp;
     }
-    @RequestMapping("/recuperaContatti")
+    
+    @RequestMapping("/eliminaContatti")
     @ResponseBody
     public Risposta eliminaContatto(@RequestBody ContattoReq c) {
         rubricagalService.eliminaContatto(c);
         Risposta risp = new Risposta();
         return risp;
     }
-    
-    
-
-   
-    
-    
 }
