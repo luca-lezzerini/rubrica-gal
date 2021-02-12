@@ -6,15 +6,18 @@
 package RubricagalServiceImp.java;
 
 import RubricagalService.java.RubricaService;
-import it.sirfin.rubricagal.dto.ContattoReq;
+import it.sirfin.rubricagal.model.ContattoReq;
+import it.sirfin.rubricagal.repository.ContattoRepository;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Federico
- */
+@Service
 public class RubricagalServiceImp implements RubricaService {
+
+    @Autowired
+    ContattoRepository contattoRepository;
 
     List<ContattoReq> rubrica = new ArrayList<>();
     int counter = 0;

@@ -6,7 +6,7 @@
 package it.sirfin.rubricagal.controller;
 
 import RubricagalService.java.RubricaService;
-import it.sirfin.rubricagal.dto.ContattoReq;
+import it.sirfin.rubricagal.model.ContattoReq;
 import it.sirfin.rubricagal.dto.Risposta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class RubricagalController {
 
    @Autowired
-   RubricaService rubricagalService;
+   RubricaService rubricaService;
 
     //Metodo che consente di inserire un contatto nella rubrica
     @RequestMapping("/inserisciContatto")
     @ResponseBody
     public Risposta inserisciContatto(@RequestBody ContattoReq c) {
-        rubricagalService.inserisciContatto(c);
+        rubricaService.inserisciContatto(c);
         Risposta risp = new Risposta();
         return risp;
     }
@@ -35,7 +35,7 @@ public class RubricagalController {
     @RequestMapping("/svuotaRubrica")
     @ResponseBody
     public Risposta svuotaContatto(@RequestBody ContattoReq c) {
-        rubricagalService.svuotaContatto(c);
+        rubricaService.svuotaContatto(c);
         Risposta risp = new Risposta("Contatto aggiunto");
         return risp;
     }
@@ -43,7 +43,7 @@ public class RubricagalController {
     @RequestMapping("/recuperaContatti")
     @ResponseBody
     public Risposta recuperaContatti() {
-        rubricagalService.recuperaContatti();
+        rubricaService.recuperaContatti();
         Risposta risp = new Risposta();
         return risp;
     }
@@ -51,7 +51,7 @@ public class RubricagalController {
     @RequestMapping("/eliminaContatti")
     @ResponseBody
     public Risposta eliminaContatto(@RequestBody ContattoReq c) {
-        rubricagalService.eliminaContatto(c);
+        rubricaService.eliminaContatto(c);
         Risposta risp = new Risposta();
         return risp;
     }

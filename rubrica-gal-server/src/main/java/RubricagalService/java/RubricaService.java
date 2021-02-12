@@ -5,17 +5,16 @@
  */
 package RubricagalService.java;
 
-import it.sirfin.rubricagal.dto.ContattoReq;
+import it.sirfin.rubricagal.model.ContattoReq;
 import java.util.List;
 
-/**
- *
- * @author Federico
- */
 public interface RubricaService {
-    
-     public List<ContattoReq> inserisciContatto (ContattoReq c);
-     public List<ContattoReq> svuotaContatto(ContattoReq c);
-     public List<ContattoReq> recuperaContatti();
-     public List <ContattoReq> eliminaContatto (ContattoReq c);
+
+    public List<ContattoReq> inserisciContatto(ContattoReq c);
+
+    public List<ContattoReq> svuotaContatto(ContattoReq c);
+
+    public List<ContattoReq> recuperaContatti();
+
+    public List<ContattoReq> eliminaContatto(ContattoReq c);
 }

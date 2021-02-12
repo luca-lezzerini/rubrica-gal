@@ -3,15 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.sirfin.rubricagal.dto;
+package it.sirfin.rubricagal.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class ContattoReq {
-
     static int counter = 0;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
+    @Column
     private String nome;
+    @Column
     private String cognome;
+    @Column
     private String telefono;
+
+    public ContattoReq() {
+    }
+    
+    
 
     public ContattoReq(String nome, String cognome, String telefono) {
         this.nome = nome;
@@ -51,4 +68,10 @@ public class ContattoReq {
         this.telefono = telefono;
     }
 
+    @Override
+    public String toString() {
+        return "ContattoReq{" + "ID=" + ID + ", nome=" + nome + ", cognome=" + cognome + ", telefono=" + telefono + '}';
+    }
+
+    
 }
