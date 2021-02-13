@@ -22,6 +22,13 @@ public class RubricagalController {
    @Autowired
    RubricaService rubricaService;
 
+   /*
+   @RequestMapping("/inizializza")
+    public void inizializza() {
+        rubricaService.inizializzazione();
+    }
+   */
+   
     //Metodo che consente di inserire un contatto nella rubrica
     @RequestMapping("/inserisciContatto")
     @ResponseBody
