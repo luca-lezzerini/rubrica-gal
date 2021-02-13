@@ -1,5 +1,3 @@
-export class Risposta
-{
+export class Risposta{
     risp: String;
-
 }
