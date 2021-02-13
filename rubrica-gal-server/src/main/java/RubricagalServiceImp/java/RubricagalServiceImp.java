@@ -22,34 +22,30 @@ public class RubricagalServiceImp implements RubricaService {
     List<ContattoReq> rubrica = new ArrayList<>();
     int counter = 0;
 
-    //Metodo che consente di inserire un contatto nella rubrica
+    /*Metodo che consente di inserire un contatto nella base dati
+                  -------DATABASE INSERT-------                 */
     @Override
-    public List<ContattoReq> inserisciContatto(ContattoReq c) {
-        c.setID(counter);
-        this.rubrica.add(c);
-        counter++;
-        return this.rubrica;
+    public void inserisciContatto(ContattoReq c) {
+       contattoRepository.save(c);
     }
 
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
     e inizializzando il contatore deli contatti a 0*/
     @Override
-    public List<ContattoReq> svuotaContatto(ContattoReq contatto) {
-        this.rubrica = new ArrayList();
-        this.counter = 0;
-        return this.rubrica;
+    public void svuotaRubrica() {
+        contattoRepository.deleteAll();
     }
 
+    /*Servizio che corrisponde alla stampa dei contatti presenti nel DB*/
     @Override
     public List<ContattoReq> recuperaContatti() {
-        return this.rubrica;
+       List <ContattoReq> elle = contattoRepository.findAll();
+       return elle;
     }
 
     @Override
-    public List<ContattoReq> eliminaContatto(ContattoReq c) {
-        this.rubrica.removeIf(rm -> rm.getID() == c.getID());
-        System.out.println("Eliminato con successo ");
-        return this.rubrica;
+    public void eliminaContatto(ContattoReq c) {
+        contattoRepository.delete(c);
     }
     
     @Override

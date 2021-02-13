@@ -8,6 +8,9 @@ package it.sirfin.rubricagal.controller;
 import RubricagalService.java.RubricaService;
 import it.sirfin.rubricagal.model.ContattoReq;
 import it.sirfin.rubricagal.dto.Risposta;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,37 +32,36 @@ public class RubricagalController {
     }
    */
    
-    //Metodo che consente di inserire un contatto nella rubrica
+    //Metodo che consente di inserire un contatto nella rubrica e ritorna la rubrica per intero
     @RequestMapping("/inserisciContatto")
     @ResponseBody
-    public Risposta inserisciContatto(@RequestBody ContattoReq c) {
+    public List<ContattoReq> inserisciContatto(@RequestBody ContattoReq c) {
         rubricaService.inserisciContatto(c);
-        Risposta risp = new Risposta();
-        return risp;
+        List <ContattoReq> rubrica = new ArrayList<>();
+        rubrica.add(c);
+        return rubrica;
     }
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
     e inizializzando il contatore deli contatti a 0*/
     @RequestMapping("/svuotaRubrica")
-    @ResponseBody
-    public Risposta svuotaContatto(@RequestBody ContattoReq c) {
-        rubricaService.svuotaContatto(c);
-        Risposta risp = new Risposta("Contatto aggiunto");
-        return risp;
+    public void svuotaRubrica() {
+        rubricaService.svuotaRubrica();
     }
+    
     
     @RequestMapping("/recuperaContatti")
     @ResponseBody
-    public Risposta recuperaContatti() {
-        rubricaService.recuperaContatti();
-        Risposta risp = new Risposta();
+    public List<ContattoReq> recuperaContatti() {
+        List<ContattoReq> risp = rubricaService.recuperaContatti();
         return risp;
     }
     
     @RequestMapping("/eliminaContatti")
     @ResponseBody
-    public Risposta eliminaContatto(@RequestBody ContattoReq c) {
+    public List <ContattoReq> eliminaContatto(@RequestBody ContattoReq c) {
+        List <ContattoReq> risp = new ArrayList<>();
         rubricaService.eliminaContatto(c);
-        Risposta risp = new Risposta();
+        risp = rubricaService.recuperaContatti();
         return risp;
     }
 }
