@@ -52,7 +52,7 @@ public class RubricagalServiceImp implements RubricaService {
         return this.rubrica;
     }
     
-    //TODO @OVVERIDE 
+    @Override
     public void inizializzazione() {
         List<ContattoReq> docenti = new ArrayList<>();
         docenti.add(new ContattoReq("Rosario", "Muniz","335643778"));

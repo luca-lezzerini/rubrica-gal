@@ -10,11 +10,13 @@ import java.util.List;
 
 public interface RubricaService {
 
-    public List<ContattoReq> inserisciContatto(ContattoReq c);
+    List<ContattoReq> inserisciContatto(ContattoReq c);
 
-    public List<ContattoReq> svuotaContatto(ContattoReq c);
+    List<ContattoReq> svuotaContatto(ContattoReq c);
 
-    public List<ContattoReq> recuperaContatti();
+    List<ContattoReq> recuperaContatti();
 
-    public List<ContattoReq> eliminaContatto(ContattoReq c);
+    List<ContattoReq> eliminaContatto(ContattoReq c);
+    
+    void inizializzazione();
 }
