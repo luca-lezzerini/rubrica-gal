@@ -273,6 +273,7 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.22.jar:8.0.22]
 	... 52 common frames omitted
 
+<<<<<<< HEAD
 2021-02-14 16:50:58.269 ERROR 6048 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
 
 java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
@@ -553,6 +554,10 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2021-02-14 16:52:51.269 DEBUG 10288 --- [main] org.hibernate.SQL                        : insert into hibernate_sequence values ( 1 )
 2021-02-14 16:52:51.381  WARN 10288 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'rubricagalController': Unsatisfied dependency expressed through field 'rubricaService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'RubricagalService.java.RubricaService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 2021-02-14 16:52:51.470 ERROR 10288 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+=======
+2021-02-14 16:47:48.451  WARN 11212 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'rubricagalController': Unsatisfied dependency expressed through field 'rubricaService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'RubricagalService.java.RubricaService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-02-14 16:47:48.481 ERROR 11212 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+>>>>>>> 2f368bf642c6cab747e189fc5e5cf3bdcf22eea1
 
 ***************************
 APPLICATION FAILED TO START
@@ -570,3 +575,65 @@ Action:
 
 Consider defining a bean of type 'RubricagalService.java.RubricaService' in your configuration.
 
+2021-02-14 22:58:46.349  WARN 8212 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-14 22:59:57.228 DEBUG 8212 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-02-14 22:59:57.247 DEBUG 8212 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-02-14 22:59:57.278 DEBUG 8212 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : insert into contatto_req (cognome, nome, telefono, id) values (?, ?, ?, ?)
+2021-02-14 22:59:57.282 TRACE 8212 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gfbs]
+2021-02-14 22:59:57.283 TRACE 8212 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gsdb]
+2021-02-14 22:59:57.284 TRACE 8212 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [525]
+2021-02-14 22:59:57.286 TRACE 8212 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [1]
+2021-02-14 22:59:58.654 DEBUG 8212 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 22:59:59.873 DEBUG 8212 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:00:04.390 DEBUG 8212 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:00:08.010 DEBUG 8212 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-02-14 23:00:08.012 DEBUG 8212 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-02-14 23:00:08.053 DEBUG 8212 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : insert into contatto_req (cognome, nome, telefono, id) values (?, ?, ?, ?)
+2021-02-14 23:00:08.055 TRACE 8212 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gfbs]
+2021-02-14 23:00:08.056 TRACE 8212 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gsdb]
+2021-02-14 23:00:08.057 TRACE 8212 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [525]
+2021-02-14 23:00:08.058 TRACE 8212 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [2]
+2021-02-14 23:00:09.419 DEBUG 8212 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:00:10.731 DEBUG 8212 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:00:26.434 DEBUG 8212 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-02-14 23:00:26.436 DEBUG 8212 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-02-14 23:00:26.441 DEBUG 8212 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : insert into contatto_req (cognome, nome, telefono, id) values (?, ?, ?, ?)
+2021-02-14 23:00:26.443 TRACE 8212 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [gfbsgqg]
+2021-02-14 23:00:26.445 TRACE 8212 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [gegesasrba]
+2021-02-14 23:00:26.445 TRACE 8212 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [52535]
+2021-02-14 23:00:26.446 TRACE 8212 --- [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [3]
+2021-02-14 23:00:28.877 DEBUG 8212 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:06:50.450 DEBUG 8212 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-02-14 23:06:50.452 DEBUG 8212 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-02-14 23:06:50.465 DEBUG 8212 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : insert into contatto_req (cognome, nome, telefono, id) values (?, ?, ?, ?)
+2021-02-14 23:06:50.467 TRACE 8212 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [uihibi]
+2021-02-14 23:06:50.468 TRACE 8212 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [ergwg]
+2021-02-14 23:06:50.469 TRACE 8212 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [88]
+2021-02-14 23:06:50.469 TRACE 8212 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [4]
+2021-02-14 23:06:53.160 DEBUG 8212 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:15:59.056 DEBUG 8212 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select next_val as id_val from hibernate_sequence for update
+2021-02-14 23:15:59.058 DEBUG 8212 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : update hibernate_sequence set next_val= ? where next_val=?
+2021-02-14 23:15:59.069 DEBUG 8212 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : insert into contatto_req (cognome, nome, telefono, id) values (?, ?, ?, ?)
+2021-02-14 23:15:59.070 TRACE 8212 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [btbsr]
+2021-02-14 23:15:59.071 TRACE 8212 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [fegwtgwb]
+2021-02-14 23:15:59.072 TRACE 8212 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [4235]
+2021-02-14 23:15:59.073 TRACE 8212 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [5]
+2021-02-14 23:16:00.534 DEBUG 8212 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:16:02.276 DEBUG 8212 --- [http-nio-8080-exec-8] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:16:03.593 DEBUG 8212 --- [http-nio-8080-exec-9] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:16:04.345 DEBUG 8212 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:16:05.131 DEBUG 8212 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:16:05.993 DEBUG 8212 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:16:10.593 DEBUG 8212 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:16:10.618 DEBUG 8212 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : delete from contatto_req where id=?
+2021-02-14 23:16:10.619 TRACE 8212 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [1]
+2021-02-14 23:16:10.631 DEBUG 8212 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : delete from contatto_req where id=?
+2021-02-14 23:16:10.632 TRACE 8212 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [2]
+2021-02-14 23:16:10.633 DEBUG 8212 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : delete from contatto_req where id=?
+2021-02-14 23:16:10.634 TRACE 8212 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [3]
+2021-02-14 23:16:10.635 DEBUG 8212 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : delete from contatto_req where id=?
+2021-02-14 23:16:10.636 TRACE 8212 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [4]
+2021-02-14 23:16:10.638 DEBUG 8212 --- [http-nio-8080-exec-7] org.hibernate.SQL                        : delete from contatto_req where id=?
+2021-02-14 23:16:10.638 TRACE 8212 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [5]
+2021-02-14 23:16:14.329 DEBUG 8212 --- [http-nio-8080-exec-10] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
+2021-02-14 23:16:15.535 DEBUG 8212 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : select contattore0_.id as id1_0_, contattore0_.cognome as cognome2_0_, contattore0_.nome as nome3_0_, contattore0_.telefono as telefono4_0_ from contatto_req contattore0_
