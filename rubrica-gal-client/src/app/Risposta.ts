@@ -1,3 +1,5 @@
+import { Contatto } from "./contatto";
+
 export class Risposta{
-    risp: String;
+    cont: Contatto[];
 }

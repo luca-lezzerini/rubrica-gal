@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   contatto: Contatto = new Contatto();
-  risposta: Risposta;
+  contatti: Contatto[];
 
   constructor(private http: HttpClient) { }
 
@@ -26,10 +26,10 @@ export class AppComponent {
     dto.nome = this.contatto.nome;
     dto.cognome = this.contatto.cognome;
     dto.telefono = this.contatto.telefono;
-    let ox: Observable<Risposta> = this.http
-      .post<Risposta>("http://localhost:8080/inserisciContatto",
+    let ox: Observable<Contatto[]> = this.http
+      .post<Contatto[]>("http://localhost:8080/inserisciContatto",
         dto);
-    ox.subscribe(r => this.risposta.risp= r.risp)
+    ox.subscribe(r => this.contatti = r)
     // function (r) {this.contatto = r.risp }
     this.stato = "mod";
   }
@@ -39,15 +39,24 @@ export class AppComponent {
     dto.nome = this.contatto.nome;
     dto.cognome = this.contatto.cognome;
     dto.telefono = this.contatto.telefono;
-    let ox: Observable<Risposta> = this.http
-      .post<Risposta>("http://localhost:8080/eliminaContatti",
+    let ox: Observable<Contatto[]> = this.http
+      .post<Contatto[]>("http://localhost:8080/eliminaContatti",
         dto);
-    ox.subscribe(r => this.risposta.risp= r.risp)
+    ox.subscribe(r => this.contatti= r)
     this.stato = "ins";
   }
 
   recupera() {
+    let dto = new Contatto();
+    dto.nome = this.contatto.nome;
+    dto.cognome = this.contatto.cognome;
+    dto.telefono = this.contatto.telefono;
+    let ox: Observable<Contatto[]> = this.http
+      .post<Contatto[]>("http://localhost:8080/recuperaContatti",
+        dto);
+    ox.subscribe(r => this.contatti= r)
     this.stato = "ins";
+
   }
 
   svuota() {
@@ -55,10 +64,10 @@ export class AppComponent {
     dto.nome = this.contatto.nome;
     dto.cognome = this.contatto.cognome;
     dto.telefono = this.contatto.telefono;
-    let ox: Observable<Risposta> = this.http
-      .post<Risposta>("http://localhost:8080/svuotaRubrica",
+    let ox: Observable<Contatto[]> = this.http
+      .post<Contatto[]>("http://localhost:8080/svuotaRubrica",
         dto);
-    ox.subscribe(r => this.risposta.risp= r.risp)
+    ox.subscribe(r => this.contatti= r)
     this.stato = "ins";
   }
 
