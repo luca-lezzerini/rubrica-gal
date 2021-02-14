@@ -43,7 +43,7 @@ export class AppComponent {
       .post<Contatto[]>("http://localhost:8080/eliminaContatti",
         dto);
     ox.subscribe(r => this.contatti= r)
-    this.stato = "ins";
+    
   }
 
   recupera() {
@@ -55,7 +55,7 @@ export class AppComponent {
       .post<Contatto[]>("http://localhost:8080/recuperaContatti",
         dto);
     ox.subscribe(r => this.contatti= r)
-    this.stato = "ins";
+    
 
   }
 
@@ -68,7 +68,7 @@ export class AppComponent {
       .post<Contatto[]>("http://localhost:8080/svuotaRubrica",
         dto);
     ox.subscribe(r => this.contatti= r)
-    this.stato = "ins";
+    
   }
 
   indietro() {
