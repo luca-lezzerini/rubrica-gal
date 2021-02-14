@@ -5,7 +5,7 @@
  */
 package it.sirfin.rubricagal.controller;
 
-import RubricagalService.java.RubricaService;
+import it.sirfin.rubricagal.service.RubricaService;
 import it.sirfin.rubricagal.model.ContattoReq;
 import it.sirfin.rubricagal.dto.Risposta;
 import java.lang.reflect.Array;

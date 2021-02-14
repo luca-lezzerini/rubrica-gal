@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RubricagalServiceImp.java;
+package it.sirfin.rubricagal.service.impl;
 
-import RubricagalService.java.RubricaService;
+import it.sirfin.rubricagal.service.RubricaService;
 import it.sirfin.rubricagal.model.ContattoReq;
 import it.sirfin.rubricagal.repository.ContattoRepository;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RubricagalServiceImp implements RubricaService {
+public class RubricagalServiceImpl implements RubricaService {
 
     @Autowired
     ContattoRepository contattoRepository;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RubricagalService.java;
+package it.sirfin.rubricagal.service;
 
 import it.sirfin.rubricagal.model.ContattoReq;
 import java.util.List;
