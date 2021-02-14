@@ -30,7 +30,7 @@ public class RubricagalServiceImp implements RubricaService {
     }
 
     /*Metodo che consente di svuotare interamente la rubrica creando una nuova 
-    e inizializzando il contatore deli contatti a 0*/
+    e inizializzando il contatore dei contatti a 0*/
     @Override
     public void svuotaRubrica() {
         contattoRepository.deleteAll();
