@@ -12,13 +12,13 @@ Numero di telefono <input type="text" [(ngModel)]="contatto.telefono">
 <button *ngIf="stato == 'mod' " (click)="indietro()">Indietro</button>
 <table>
     <tr>
-      <th>ID</th>
-      <th>nome</th>
-      <th>cognome</th>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Cognome</th>
       <th>Telefono</th>
     </tr>
     <tr *ngFor="let x of contatti, index as i">
-      <td>{{x.ID}}</td>
+      <td>{{x.id}}</td>
       <td>{{x.nome}}</td>
       <td>{{x.cognome}}</td>
       <td>{{x.telefono}}</td>

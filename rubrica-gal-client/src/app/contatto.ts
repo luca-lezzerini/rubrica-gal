@@ -1,5 +1,5 @@
 export class Contatto {
-    ID: number;
+    id: bigint;
     nome: String = "";
     cognome: String = "";
     telefono: String = "";
