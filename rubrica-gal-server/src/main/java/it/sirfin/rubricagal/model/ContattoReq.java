@@ -17,7 +17,7 @@ public class ContattoReq {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int ID;
+    private int id;
     @Column
     private String nome;
     @Column
@@ -36,12 +36,12 @@ public class ContattoReq {
         this.telefono = telefono;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -70,7 +70,7 @@ public class ContattoReq {
 
     @Override
     public String toString() {
-        return "ContattoReq{" + "ID=" + ID + ", nome=" + nome + ", cognome=" + cognome + ", telefono=" + telefono + '}';
+        return "ContattoReq{" + "ID=" + id + ", nome=" + nome + ", cognome=" + cognome + ", telefono=" + telefono + '}';
     }
 
     
